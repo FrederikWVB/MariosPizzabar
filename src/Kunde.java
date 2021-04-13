@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Kunde {
     String navn;
@@ -8,4 +10,5 @@ public class Kunde {
         this.navn = navn;
         this.tlfNr = tlfNr;
     }
+
 }
