@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 public class Pizza {
     String navn;
     String pizzaindhold;
     int pris;
     int ID;
+
+    public Pizza (){};
 
     public Pizza(String navn, String pizzaindhold, int pris, int ID) {
         this.navn = navn;
