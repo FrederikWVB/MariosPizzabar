@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class Ordre {
 
     public static void main(String[] args) {
-        ArrayList<Pizza> Pizza = new ArrayList<>();
-
-        //Pizza pizza1 = new Pizza("John", "Peperoni", 10, 1);
-
-        //Pizza.add(pizza1);
+        ArrayList<Pizza> pizzas = new ArrayList<>();
 
         Pizza menu[] = Menukort.createMenu();
 
-        System.out.println(menu[0]);
+        //System.out.println(menu[0].getNavn());
+
+        pizzas.add(menu[0]);
+
+        System.out.println(pizzas.get(0).getNavn());
 
 
 
