@@ -30,4 +30,20 @@ public class Pizza {
     public int getID() {
         return ID;
     }
+
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public void setPizzaindhold(String pizzaindhold) {
+        this.pizzaindhold = pizzaindhold;
+    }
+
+    public void setPris(int pris) {
+        this.pris = pris;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }
