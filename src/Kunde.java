@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Kunde {
     String navn;
     int tlfNr;
@@ -8,4 +6,5 @@ public class Kunde {
         this.navn = navn;
         this.tlfNr = tlfNr;
     }
+
 }
