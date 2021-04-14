@@ -30,10 +30,10 @@ public class Ordre {
 
 
     }
-    public static void time() {
+    public static String time() {
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("HH:mm:ss");//dd-MM-yyyy
         String finalDate = date.format(formatDate);
-        System.out.println(finalDate);
+        return finalDate;
     }
 }
