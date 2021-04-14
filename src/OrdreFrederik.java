@@ -5,7 +5,7 @@ public class OrdreFrederik {
     String kundenavn;
     ArrayList<Pizza> pizzaOrdre = new ArrayList<Pizza>();
 
-    public OrdreFrederik() {}
+    public OrdreFrederik(){}
 
     public void setKundenavn(String kundenavn) {
         this.kundenavn = kundenavn;
@@ -32,17 +32,22 @@ public class OrdreFrederik {
     }
 
     public static OrdreFrederik createOrdre (Pizza menu[]){
-        OrdreFrederik kunde = new OrdreFrederik();
+        OrdreFrederik currentOrder = new OrdreFrederik();
         Scanner sc = new Scanner(System.in);
         System.out.println("Indtast kundenavn");
-        kunde.setKundenavn(sc.nextLine());
+        currentOrder.setKundenavn(sc.nextLine());
 
+        int choice = 1;
 
-        kunde.pizzaOrdre.add(menu[0]);
-        kunde.pizzaOrdre.add(menu[1]);
-        kunde.pizzaOrdre.add(menu[2]);
+        while (choice != 0){
+            choice = sc.nextInt();
+            if (choice != 0){
+                currentOrder.pizzaOrdre.add(menu[choice]);
+                System.out.println(menu[choice].getNavn());
+            }
+        }
 
-        return kunde;
+        return currentOrder;
     }
 
     }
