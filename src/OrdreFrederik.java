@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class OrdreFrederik {
     String kundenavn;
+    String bestillingstidspunkt;
     ArrayList<Pizza> pizzaOrdre = new ArrayList<Pizza>();
 
     public OrdreFrederik(){}
@@ -27,7 +28,7 @@ public class OrdreFrederik {
             System.out.println(ordreListe.get(0).pizzaOrdre.get(i).getNavn());
         }
 
-        System.out.println("Kunde: " + ordreListe.get(0).kundenavn);
+        System.out.println("Kunde: " + ordreListe.get(0).kundenavn + " Tid:" + ordreListe.get(0).bestillingstidspunkt);
 
     }
 
@@ -46,6 +47,8 @@ public class OrdreFrederik {
                 System.out.println(menu[choice].getNavn());
             }
         }
+
+        currentOrder.bestillingstidspunkt = Ordre.time();
 
         return currentOrder;
     }
