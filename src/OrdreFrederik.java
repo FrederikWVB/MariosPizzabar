@@ -15,25 +15,19 @@ public class OrdreFrederik {
         this.pizzaOrdre = pizzaOrdre;
     }
 
-
     public static void main(String[] args) {
-        //ArrayList<Pizza> pizzas = new ArrayList<>();
 
         Pizza menu[] = Menukort.createMenu();
 
         ArrayList<OrdreFrederik> ordreListe = new ArrayList<>();
 
-        //System.out.println(menu[0].getNavn());
-
-
-
-        //System.out.println(pizzas.get(0).getNavn());
-
         ordreListe.add(createOrdre(menu));
 
-        System.out.println(ordreListe.get(0).pizzaOrdre.get(0).getNavn() + ordreListe.get(0).pizzaOrdre.get(1).getNavn());
+        for (int i = 0; i < (ordreListe.get(0).pizzaOrdre.size()) ; i++){
+            System.out.println(ordreListe.get(0).pizzaOrdre.get(i).getNavn());
+        }
 
-
+        System.out.println("Kunde: " + ordreListe.get(0).kundenavn);
 
     }
 
@@ -45,7 +39,8 @@ public class OrdreFrederik {
 
 
         kunde.pizzaOrdre.add(menu[0]);
-        kunde.pizzaOrdre.add(menu[0]);
+        kunde.pizzaOrdre.add(menu[1]);
+        kunde.pizzaOrdre.add(menu[2]);
 
         return kunde;
     }
