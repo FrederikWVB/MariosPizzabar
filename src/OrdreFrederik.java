@@ -4,14 +4,13 @@ import java.util.Scanner;
 public class OrdreFrederik {
     String kundenavn;
     String bestillingstidspunkt;
+    static int idCounter = 1;
     int bestillingsID;
     int samletPris;
     ArrayList<Pizza> pizzaOrdre = new ArrayList<Pizza>();
 
-    static int idCounter = 0;
-
     public OrdreFrederik(){
-        idCounter++;
+        this.bestillingsID = idCounter++;
     }
 
     public void setKundenavn(String kundenavn) {
@@ -19,6 +18,7 @@ public class OrdreFrederik {
     }
 
     public static int getIdCounter (){
+        idCounter++;
         return idCounter;
     }
 
@@ -40,23 +40,25 @@ public class OrdreFrederik {
         System.out.println("Kunde: " + ordreListe.get(0).kundenavn);
         System.out.println("Tid: " + ordreListe.get(0).bestillingstidspunkt);
         System.out.println("Samlet pris: " + ordreListe.get(0).samletPris);
-        System.out.println(ordreListe.get(0).bestillingsID);
+        System.out.println("ID: " + ordreListe.get(0).bestillingsID);
 
         ordreListe.add(createOrdre(menu));
-        System.out.println(ordreListe.get(0).bestillingsID);
+        System.out.println("ID: " + ordreListe.get(1).bestillingsID);
 
     }
 
     public static OrdreFrederik createOrdre (Pizza menu[]){
         OrdreFrederik currentOrder = new OrdreFrederik();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Indtast kundenavn");
+        System.out.println("Indtast kundenavn:");
         currentOrder.setKundenavn(sc.nextLine());
 
         int choice = 1;
         int counter = 0;
 
+        System.out.println("Tast 0 for Exit");
         while (choice != 0){
+            System.out.print("Pizza ID: ");
             choice = sc.nextInt();
             if (choice != 0){
                 currentOrder.pizzaOrdre.add(menu[choice]);
@@ -66,9 +68,7 @@ public class OrdreFrederik {
             }
         }
 
-
         currentOrder.bestillingstidspunkt = Ordre.time();
-        currentOrder.bestillingsID = OrdreFrederik.getIdCounter();
 
         return currentOrder;
     }
