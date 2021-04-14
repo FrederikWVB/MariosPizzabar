@@ -21,13 +21,19 @@ public class OrdreFrederik {
 
         Pizza menu[] = Menukort.createMenu();
 
+        ArrayList<OrdreFrederik> ordreListe = new ArrayList<>();
+
         //System.out.println(menu[0].getNavn());
 
 
 
         //System.out.println(pizzas.get(0).getNavn());
 
-        System.out.println(createOrdre(menu).pizzaOrdre.get(0).getNavn());
+        ordreListe.add(createOrdre(menu));
+
+        System.out.println(ordreListe.get(0).pizzaOrdre.get(0).getNavn() + ordreListe.get(0).pizzaOrdre.get(1).getNavn());
+
+
 
     }
 
@@ -36,6 +42,7 @@ public class OrdreFrederik {
         Scanner sc = new Scanner(System.in);
         System.out.println("Indtast kundenavn");
         kunde.setKundenavn(sc.nextLine());
+
 
         kunde.pizzaOrdre.add(menu[0]);
         kunde.pizzaOrdre.add(menu[0]);
