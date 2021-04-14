@@ -1,3 +1,4 @@
+import javax.lang.model.element.NestingKind;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -28,11 +29,11 @@ public class Ordre {
         System.out.println(pizzas.get(0).getNavn());
 
 
+    }
+    public void time() {
         LocalDateTime date = LocalDateTime.now();
-        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("HH:mm:ss"); //dd-MM-yyyy
         String finalDate = date.format(formatDate);
         System.out.println(finalDate);
     }
-
-
 }
