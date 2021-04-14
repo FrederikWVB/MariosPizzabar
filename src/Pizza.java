@@ -2,15 +2,14 @@ import java.util.ArrayList;
 
 public class Pizza {
     String navn;
-    String pizzaindhold;
+
     int pris;
     int ID;
 
     public Pizza (){};
 
-    public Pizza(String navn, String pizzaindhold, int pris, int ID) {
+    public Pizza(String navn, int pris, int ID) {
         this.navn = navn;
-        this.pizzaindhold = pizzaindhold;
         this.pris = pris;
         this.ID = ID;
     }
@@ -19,9 +18,7 @@ public class Pizza {
         return navn;
     }
 
-    public String getPizzaindhold() {
-        return pizzaindhold;
-    }
+
 
     public int getPris() {
         return pris;
@@ -35,9 +32,6 @@ public class Pizza {
         this.navn = navn;
     }
 
-    public void setPizzaindhold(String pizzaindhold) {
-        this.pizzaindhold = pizzaindhold;
-    }
 
     public void setPris(int pris) {
         this.pris = pris;
