@@ -13,10 +13,12 @@ import java.util.Scanner;
      Til sidst vises beskeden "Ordre vidersendt", som skal indikere at ordren er sendt til Mario,
      så han ved hvilke pizzer der skal laves */
 
-public class OrdreApplication {
+public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+
+
 
         Pizza menu[] = Menukort.createMenu();
 
@@ -42,5 +44,10 @@ public class OrdreApplication {
             }
 
         }
+    }
+
+    public void Choice (){
+        
+
     }
 }
