@@ -16,13 +16,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
-
-
         Pizza menu[] = Menukort.createMenu();
 
         ArrayList<Ordre> ordreListe = new ArrayList<>();
+
+        choice();
+
+        //Laver scanner for at få userinput i switch case
+        Scanner sc = new Scanner(System.in);
+
 
         boolean UserExit = false;
 
@@ -31,6 +33,7 @@ public class Main {
             switch (sc.nextInt()){
                 case 1: //Ny pizza
                     ordreListe.add(Ordre.createOrdre(menu));
+                    System.out.println("tast 3 for at afslutte bestilling");
                     break;
 
                 case 2: //Vis ordre
@@ -46,8 +49,11 @@ public class Main {
         }
     }
 
-    public void Choice (){
-        
+    public static void choice (){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("tryk 1 for at starte bestilling");
+        System.out.println("tryk 2 for at vise ordre");
+        System.out.println("tryk 3 for at afslutte ordre");
 
     }
 }

@@ -39,7 +39,7 @@ public class Ordre {
         int choice = 1;
         int counter = 0;
 
-        System.out.println("Tast 0 for Exit");
+        System.out.println("Tast 0 når alle pizzer er på bestillingsliste");
         while (choice != 0){
             System.out.print("Pizza ID: ");
             choice = sc.nextInt();
