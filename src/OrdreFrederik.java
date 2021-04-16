@@ -7,7 +7,7 @@ public class OrdreFrederik {
     static int idCounter = 1;
     int bestillingsID;
     int samletPris;
-    ArrayList<Pizza> pizzaOrdre = new ArrayList<Pizza>();
+    ArrayList<Pizza> pizzaOrdre = new ArrayList<>();
 
     public OrdreFrederik(){
         this.bestillingsID = idCounter++;
@@ -15,11 +15,6 @@ public class OrdreFrederik {
 
     public void setKundenavn(String kundenavn) {
         this.kundenavn = kundenavn;
-    }
-
-    public static int getIdCounter (){
-        idCounter++;
-        return idCounter;
     }
 
 
@@ -30,20 +25,10 @@ public class OrdreFrederik {
         ArrayList<OrdreFrederik> ordreListe = new ArrayList<>();
 
         ordreListe.add(createOrdre(menu));
+        //ordreListe.add(createOrdre(menu));
+        //ordreListe.add(createOrdre(menu));
 
-        for (int i = 0; i < (ordreListe.get(0).pizzaOrdre.size()) ; i++){
-            System.out.print(ordreListe.get(0).pizzaOrdre.get(i).getID() + " ");
-            System.out.print(ordreListe.get(0).pizzaOrdre.get(i).getNavn() + " ");
-            System.out.println(ordreListe.get(0).pizzaOrdre.get(i).getPris() + "kr");
-        }
-
-        System.out.println("Kunde: " + ordreListe.get(0).kundenavn);
-        System.out.println("Tid: " + ordreListe.get(0).bestillingstidspunkt);
-        System.out.println("Samlet pris: " + ordreListe.get(0).samletPris);
-        System.out.println("ID: " + ordreListe.get(0).bestillingsID);
-
-        ordreListe.add(createOrdre(menu));
-        System.out.println("ID: " + ordreListe.get(1).bestillingsID);
+        showOrdre(ordreListe);
 
     }
 
@@ -73,4 +58,23 @@ public class OrdreFrederik {
         return currentOrder;
     }
 
+    public static void showOrdre (ArrayList<OrdreFrederik> ordreListInput){
+        for (int i = 0; i < ordreListInput.size(); i++){
+
+            System.out.println("Kunde: " + ordreListInput.get(i).kundenavn);
+            System.out.println("Tid: " + ordreListInput.get(i).bestillingstidspunkt);
+
+            for (int j = 0; j < (ordreListInput.get(i).pizzaOrdre.size()) ; j++){
+                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getID() + " ");
+                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getNavn() + " ");
+                System.out.println(ordreListInput.get(i).pizzaOrdre.get(j).getPris() + "kr");
+            }
+
+            System.out.println("Samlet pris: " + ordreListInput.get(i).samletPris);
+            System.out.println("ID: " + ordreListInput.get(i).bestillingsID);
+
+        }
+
     }
+
+}
