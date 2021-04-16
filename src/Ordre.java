@@ -1,39 +1,80 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Ordre {
+    String kundenavn;
+    String bestillingstidspunkt;
+    static int idCounter = 1;
+    int bestillingsID;
+    int samletPris;
+    ArrayList<Pizza> pizzaOrdre = new ArrayList<>();
 
-    /* Når programmet vises, skal det være muligt at vælge om man blot vil se menuen eller vil gå igang med at lave ordreliste.
+    public Ordre(){
+        this.bestillingsID = idCounter++;
+    }
 
-    Det skal være muligt for Alfonso, at trykke på en knap, der gør at han kan oprette en ordre, hvor han selv kan vælge
-    hvilke pizzaer, der skal indgå i ordren og antal pizzaer. Når ordren er færdig, opdateres odreliste
-    For hver gang Alfonso tilføjer en pizza opdateres ordrelisten,
-    med den nye pizza, der er blevet tilføjet.
+    public void setKundenavn(String kundenavn) {
+        this.kundenavn = kundenavn;
+    }
 
-     Når han er færdig med at tilføje, skal det være muligt at afslutte programmet, ved at trykke på en bestemt knap fx.2
-     herefter skal den samlede pris vises samt hvad tid den skal hentes.
-     Til sidst vises beskeden "Ordre vidersendt", som skal indikere at ordren er sendt til Mario,
-     så han ved hvilke pizzer der skal laves */
 
     public static void main(String[] args) {
-        ArrayList<Pizza> pizzas = new ArrayList<>();
 
         Pizza menu[] = Menukort.createMenu();
+        ArrayList<Ordre> ordreListe = new ArrayList<>();
 
-        //System.out.println(menu[0].getNavn());
-
-        pizzas.add(menu[0]);
-
-        System.out.println(pizzas.get(0).getNavn());
-
-
-
+        ordreListe.add(createOrdre(menu));
+        ordreListe.add(createOrdre(menu));
+        showOrdre(ordreListe);
     }
+
+    public static Ordre createOrdre (Pizza menu[]){
+        Ordre currentOrder = new Ordre();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indtast kundenavn:");
+        currentOrder.setKundenavn(sc.nextLine());
+
+        int choice = 1;
+        int counter = 0;
+
+        System.out.println("Tast 0 for Exit");
+        while (choice != 0){
+            System.out.print("Pizza ID: ");
+            choice = sc.nextInt();
+            if (choice != 0){
+                currentOrder.pizzaOrdre.add(menu[choice]);
+                currentOrder.samletPris = currentOrder.samletPris + currentOrder.pizzaOrdre.get(counter).pris;
+                System.out.println(menu[choice].getNavn());
+                counter++;
+            }
+        }
+        currentOrder.bestillingstidspunkt = time();
+
+        return currentOrder;
+    }
+
+    public static void showOrdre (ArrayList<Ordre> ordreListInput){
+        for (int i = 0; i < ordreListInput.size(); i++){
+
+            System.out.println("Kunde: " + ordreListInput.get(i).kundenavn);
+            System.out.println("Tid: " + ordreListInput.get(i).bestillingstidspunkt);
+
+            for (int j = 0; j < (ordreListInput.get(i).pizzaOrdre.size()) ; j++){
+                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getID() + " ");
+                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getNavn() + " ");
+                System.out.println(ordreListInput.get(i).pizzaOrdre.get(j).getPris() + "kr");
+            }
+
+            System.out.println("Samlet pris: " + ordreListInput.get(i).samletPris);
+            System.out.println("ID: " + ordreListInput.get(i).bestillingsID);
+        }
+    }
+
     public static String time() {
         LocalDateTime date = LocalDateTime.now();
-        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("HH:mm:ss");//dd-MM-yyyy
-        String finalDate = date.format(formatDate);
-        return finalDate;
+        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("HH:mm:ss"); //dd-MM-yyyy
+        return date.format(formatDate);
     }
 }
