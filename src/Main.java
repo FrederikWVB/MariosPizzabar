@@ -36,7 +36,7 @@ public class Main {
                 case 1:
                     System.out.println(Arrays.toString(menu));
                     ordreListe.add(Ordre.createOrdre(menu));
-                    System.out.println("tast 2 = afslut bestillingslisten og se ordreliste");
+                    System.out.println("tast 2 = afslut bestilling og se ordreliste");
                     break;
 
                 case 2: //Vis ordre
@@ -48,7 +48,12 @@ public class Main {
                 case 3: //Exit
                     UserExit = true;
                     break;
-
+                default:
+                    System.out.println("Input ikke godkendt prøv igen");
+                    System.out.println("tryk 1 for at starte bestilling");
+                    System.out.println("tryk 2 for at vise ordre");
+                    System.out.println("tryk 3 for at slukke systemet");
+                    break;
             }
 
         }
