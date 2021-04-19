@@ -31,16 +31,20 @@ public class Main {
         while(UserExit == false){
 
             switch (sc.nextInt()){
-                case 1: //Ny pizza
+
+                case 1:
+                    System.out.println(Menukort());
+                case 2: //Ny pizza
                     ordreListe.add(Ordre.createOrdre(menu));
-                    System.out.println("tast 3 for at afslutte bestilling");
+                    System.out.println("tast 2 = se endelig bestillingsliste");
+                    System.out.println("tast 3 = afslut bestillingslisten");
                     break;
 
-                case 2: //Vis ordre
+                case 3: //Vis ordre
                     Ordre.showOrdre(ordreListe);
                     break;
 
-                case 3: //Exit
+                case 4: //Exit
                     UserExit = true;
                     break;
 
@@ -53,7 +57,5 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("tryk 1 for at starte bestilling");
         System.out.println("tryk 2 for at vise ordre");
-        System.out.println("tryk 3 for at afslutte ordre");
-
     }
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Menukort {
 
     public static Pizza[] createMenu(){
@@ -10,6 +12,8 @@ public class Menukort {
         menu[4] = (new Pizza("Dennis", 65, 5));
 
         return menu;
+
+        ArrayList<Pizza> pizzakort = new ArrayList<>();
     }
 
 
