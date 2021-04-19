@@ -43,6 +43,11 @@ public class Main {
                     Ordre.showOrdre(ordreListe);
                     System.out.println("tast 1 = lav ny bestilling");
                     System.out.println("tast 3 = sluk systemet");
+                    if(sc.nextInt() != 1 || sc.nextInt() !=3) {
+                        System.out.println("Input ikke godkendt prøv igen");
+                        System.out.println("tast 1 = lav ny bestilling");
+                        System.out.println("tast 3 = sluk systemet");
+                    }
                     break;
 
                 case 3: //Exit
