@@ -13,7 +13,6 @@ public class Menukort {
 
         return menu;
 
-        ArrayList<Pizza> pizzakort = new ArrayList<>();
     }
 
 

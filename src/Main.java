@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
     /* Når programmet vises, skal det være muligt at vælge om man blot vil se menuen eller vil gå igang med at lave ordreliste.
@@ -33,7 +34,8 @@ public class Main {
             switch (sc.nextInt()){
 
                 case 1:
-                    System.out.println(Menukort());
+                    System.out.println(Arrays.toString(menu));
+
                 case 2: //Ny pizza
                     ordreListe.add(Ordre.createOrdre(menu));
                     System.out.println("tast 2 = se endelig bestillingsliste");
