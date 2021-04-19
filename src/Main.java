@@ -34,7 +34,7 @@ public class Main {
             switch (sc.nextInt()){
 
                 case 1:
-                    System.out.println(Arrays.toString(menu));
+                    System.out.println(Menukort.menuAgain(menu));
                     ordreListe.add(Ordre.createOrdre(menu));
                     System.out.println("tast 2 = afslut bestilling og se ordreliste");
                     break;
