@@ -35,17 +35,17 @@ public class Main {
 
                 case 1:
                     System.out.println(Arrays.toString(menu));
-
-                case 2: //Ny pizza
                     ordreListe.add(Ordre.createOrdre(menu));
-                    System.out.println("tast 3 = afslut bestillingslisten og se ordreliste");
+                    System.out.println("tast 2 = afslut bestillingslisten og se ordreliste");
                     break;
 
-                case 3: //Vis ordre
+                case 2: //Vis ordre
                     Ordre.showOrdre(ordreListe);
+                    System.out.println("tast 1 = lav ny bestilling");
+                    System.out.println("tast 3 = sluk systemet");
                     break;
 
-                case 4: //Exit
+                case 3: //Exit
                     UserExit = true;
                     break;
 
@@ -57,6 +57,7 @@ public class Main {
     public static void choice (){
         Scanner sc = new Scanner(System.in);
         System.out.println("tryk 1 for at starte bestilling");
-        System.out.println("tryk 3 for at vise ordre");
+        System.out.println("tryk 2 for at vise ordre");
+        System.out.println("tryk 3 for at slukke systemet");
     }
 }
