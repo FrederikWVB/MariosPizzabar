@@ -47,6 +47,7 @@ public class Ordre {
             choice = sc.nextInt();
             if (choice != 0){
                 currentOrder.pizzaOrdre.add(menu[choice]);
+                Main.menu[choice].salg++;
                 currentOrder.samletPris = currentOrder.samletPris + currentOrder.pizzaOrdre.get(counter).pris;
                 System.out.println(menu[choice].getNavn());
                 counter++;

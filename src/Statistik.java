@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 
 public class Statistik {
-    static Pizza[] pizzaStatistik = new Pizza[30];
 
-
-
-    public static void createStatistik (){
-        System.out.println(Main.menu[1].getNavn());
-    }
-
-    public static void showStatistic (ArrayList ordreListe){
-
+    public static void showStatistic (){
+        int totalomsætning = 0;
+        for (int i = 1; i < Main.menu.length; i++){
+            System.out.print(Main.menu[i].getID() + " ");
+            System.out.print(Main.menu[i].getNavn() + " - Antal salg: ");
+            System.out.println(Main.menu[i].getSalg() + "x");
+            totalomsætning = totalomsætning + (Main.menu[i].getSalg() * Main.menu[i].getPris());
+        }
+        System.out.println("Totalomsætning: " + totalomsætning + "kr");
     }
 }
