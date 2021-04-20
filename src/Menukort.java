@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Menukort {
 
     public static Pizza[] createMenu() {
-        Pizza[] menu = new Pizza[20];
+        Pizza[] menu = new Pizza[30];
 
         menu[0] = (new Pizza("x",1,999999999));
         menu[1] = (new Pizza("Vesuvio", 57, 1));
