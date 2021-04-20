@@ -15,9 +15,12 @@ import java.util.Scanner;
      så han ved hvilke pizzer der skal laves */
 
 public class Main {
+
+    static Pizza menu[] = Menukort.createMenu();
+
     public static void main(String[] args) {
 
-        Pizza menu[] = Menukort.createMenu();
+        //Pizza menu[] = Menukort.createMenu();
 
         ArrayList<Ordre> ordreListe = new ArrayList<>();
 
@@ -25,6 +28,8 @@ public class Main {
 
         //Laver scanner for at få userinput i switch case
         Scanner sc = new Scanner(System.in);
+
+        Statistik.createStatistik();
 
 
         boolean UserExit = false;
@@ -34,8 +39,8 @@ public class Main {
             switch (sc.nextInt()){
 
                 case 1:
-                    System.out.println(Menukort.menuAgain(menu));
-                    ordreListe.add(Ordre.createOrdre(menu));
+                    //System.out.println(Menukort.menuAgain(menu));
+                    ordreListe.add(Ordre.createOrdre(Main.menu));
                     System.out.println("tast 2 = afslut bestilling og se ordreliste");
                     break;
 
@@ -53,6 +58,11 @@ public class Main {
                 case 3: //Exit
                     UserExit = true;
                     break;
+
+                case 4: //Vis statistik
+                    Statistik.showStatistic(ordreListe);
+                    break;
+
                 default:
                     System.out.println("Input ikke godkendt prøv igen");
                     System.out.println("tryk 1 for at starte bestilling");
@@ -65,7 +75,6 @@ public class Main {
     }
 
     public static void choice (){
-        Scanner sc = new Scanner(System.in);
         System.out.println("tryk 1 for at starte bestilling");
         System.out.println("tryk 2 for at vise ordre");
         System.out.println("tryk 3 for at slukke systemet");

@@ -20,6 +20,7 @@ public class Ordre {
     }
 
 
+
     public static void main(String[] args) {
 
         Pizza menu[] = Menukort.createMenu();
@@ -28,6 +29,7 @@ public class Ordre {
         ordreListe.add(createOrdre(menu));
         ordreListe.add(createOrdre(menu));
         showOrdre(ordreListe);
+        menu[2].pris = 10;
     }
 
     public static Ordre createOrdre (Pizza menu[]){
