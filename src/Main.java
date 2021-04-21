@@ -35,9 +35,9 @@ public class Main {
             switch (sc.nextInt()){
 
                 case 1:
-                    //System.out.println(Menukort.menuAgain(menu));
+                    System.out.println(Menukort.menuForUser(menu));
                     ordreListe.add(Ordre.createOrdre(Main.menu));
-                    //System.out.println("tast 2 = afslut bestilling og se ordreliste");
+                    System.out.println("tast 2 = afslut bestilling og se ordreliste");
                     break;
 
                 case 2: //Vis ordre

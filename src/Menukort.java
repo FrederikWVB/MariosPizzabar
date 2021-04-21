@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 
 public class Menukort {
@@ -15,8 +17,12 @@ public class Menukort {
     }
 
 
-    public static String menuAgain(Pizza[] menu) {
-        return menu[0].ID + " " + menu[0].navn;
+    public static String menuForUser(Pizza[] menu) {
+        int i;
+        for (i = 1; i < menu.length - 1; i++) {
+            System.out.println(menu[i].ID + ". " + menu[i].navn);
+        }
+        return menu[i].ID + ". " + menu[i].navn;
 
     }
 
