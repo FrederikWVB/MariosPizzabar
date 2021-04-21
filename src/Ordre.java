@@ -18,7 +18,9 @@ public class Ordre {
     public void setKundenavn(String kundenavn) {
         this.kundenavn = kundenavn;
     }
-
+    public static int getBestillingsID (int bestillingsID){
+        return bestillingsID;
+    }
 
 
     public static void main(String[] args) {

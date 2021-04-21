@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class Kunde {
     String navn;
     int tlfNr;
@@ -5,5 +7,4 @@ public class Kunde {
     public Kunde(String navn) {
         this.navn = navn;
     }
-
 }
