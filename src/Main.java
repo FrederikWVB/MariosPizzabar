@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Iterator;
 
@@ -17,39 +16,36 @@ import java.util.Iterator;
 
 public class Main {
 
-    static Pizza menu[] = Menukort.createMenu();
+    static Pizza menu[] = Menukort.createMenu();        //Opretter pizza menukort med alle pizza-elementer i memory
 
     public static void main(String[] args) {
 
-        ArrayList<Ordre> ordreListe = new ArrayList<>();
+        ArrayList<Ordre> ordreListe = new ArrayList<>();//Opretter ordreliste for pizzabestillinger
 
-        choice();
-
-        //Laver scanner for at få userinput i switch case
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);            //Scanner for userinput i switch case
 
 
         boolean UserExit = false;
 
         while(UserExit == false){
 
+            choice();                                   //Printer hovedmenu oversigt
+
             switch (sc.nextInt()){
 
-                case 1:
+                case 1: //Opret ordre
                     System.out.println(Menukort.menuForUser(menu));
                     ordreListe.add(Ordre.createOrdre(Main.menu));
-                    System.out.println("tast 2 = afslut bestilling og se ordreliste");
                     break;
 
                 case 2: //Vis ordre
                     Ordre.showOrdre(ordreListe);
-                    System.out.println("tast 1 = lav ny bestilling");
-                    System.out.println("tast 5 = sluk systemet");
                     break;
 
                 case 3: //Vis statistik
                     Statistik.showStatistic();
                     break;
+
                 case 4: //Slet ordre
                     Ordre.showOrdre(ordreListe);
                     System.out.println("Indtast ID på den ordre du vil fjerne");
@@ -62,7 +58,6 @@ public class Main {
 
                 default:
                     System.out.println("Input ikke godkendt prøv igen");
-                    choice();
                     break;
             }
         }

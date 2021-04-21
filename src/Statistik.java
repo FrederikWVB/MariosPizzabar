@@ -8,7 +8,7 @@ public class Statistik {
             System.out.print(Main.menu[i].getID() + " ");
             System.out.print(Main.menu[i].getNavn() + " - Antal salg: ");
             System.out.println(Main.menu[i].getSalg() + "x");
-            totalomsætning = totalomsætning + (Main.menu[i].getSalg() * Main.menu[i].getPris());
+            totalomsætning = totalomsætning + (Main.menu[i].getSalg() * Main.menu[i].getPris());//pizzasalg * pizzapris
         }
         System.out.println("Totalomsætning: " + totalomsætning + "kr");
     }
