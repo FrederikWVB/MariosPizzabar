@@ -31,7 +31,6 @@ public class Ordre {
         ordreListe.add(createOrdre(menu));
         ordreListe.add(createOrdre(menu));
         showOrdre(ordreListe);
-        menu[2].pris = 10;
     }
 
     public static Ordre createOrdre (Pizza menu[]){
@@ -76,6 +75,17 @@ public class Ordre {
             System.out.println("ID: " + ordreListInput.get(i).bestillingsID);
         }
     }
+
+    public static void sletOrdre (ArrayList<Ordre> ordreListInput){
+        Scanner sc = new Scanner(System.in);
+        int checkID = sc.nextInt();
+        for (int i = 0; i < ordreListInput.size(); i++){
+            if (ordreListInput.get(i).bestillingsID == checkID){
+                ordreListInput.remove(i);
+            }
+        }
+    }
+
 
     public static String time() {
         LocalDateTime date = LocalDateTime.now();

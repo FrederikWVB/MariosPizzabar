@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Menukort {
 
+    static Pizza menu[] = createMenu();
+
     public static Pizza[] createMenu() {
         Pizza[] menu = new Pizza[6];
 

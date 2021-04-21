@@ -53,8 +53,9 @@ public class Main {
                 case 4: //Slet ordre
                     Ordre.showOrdre(ordreListe);
                     System.out.println("Indtast ID på den ordre du vil fjerne");
-                    ordreListe.remove(sc.nextInt()-1);
+                    Ordre.sletOrdre(ordreListe);
                     break;
+
                 case 5: //Exit
                     UserExit = true;
                     break;
