@@ -63,8 +63,6 @@ public class Ordre {
             System.out.println("│Samlet pris...: " + ordreListInput.get(i).samletPris + "kr");
             System.out.println("│Bestillings ID: " + ordreListInput.get(i).bestillingsID);
             System.out.println("├────────────────────────┤");
-
-
         }
     }
 
