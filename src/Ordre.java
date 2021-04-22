@@ -48,11 +48,11 @@ public class Ordre {
     }
 
     public static void showOrdre(ArrayList<Ordre> ordreListInput) {
-        System.out.println("┌─────Aktive Ordre─────┐");
+        System.out.println("┌──────Aktive Ordre──────┐");
 
         for (int i = 0; i < ordreListInput.size(); i++) {        //Loop gennemgår alle bestillinger i ordreList
-            System.out.println("│Kunde: " + ordreListInput.get(i).kundenavn);
-            System.out.println("│Tid  : " + ordreListInput.get(i).bestillingstidspunkt);
+            System.out.println("│Kunde.........: " + ordreListInput.get(i).kundenavn);
+            System.out.println("│Bestilt kl....: " + ordreListInput.get(i).bestillingstidspunkt);
 
             for (int j = 0; j < (ordreListInput.get(i).pizzaOrdre.size()); j++) {   //Loop printer alle bestilte pizzaer i given ordre
                 System.out.print("│" + ordreListInput.get(i).pizzaOrdre.get(j).getID() + " ");
@@ -60,9 +60,9 @@ public class Ordre {
                 System.out.println(ordreListInput.get(i).pizzaOrdre.get(j).getPris() + "kr");
             }
 
-            System.out.println("│Samlet pris   : " + ordreListInput.get(i).samletPris + "kr");
+            System.out.println("│Samlet pris...: " + ordreListInput.get(i).samletPris + "kr");
             System.out.println("│Bestillings ID: " + ordreListInput.get(i).bestillingsID);
-            System.out.println("├──────────────────────┤");
+            System.out.println("├────────────────────────┤");
 
 
         }

@@ -20,12 +20,12 @@ public class Menukort {
 
 
     public static void menuForUser() {
-        System.out.println("┌───────Menukort───────┐");
+        System.out.println("┌────────Menukort────────┐");
         for (int i = 1; i < Main.menu.length; i++){
             System.out.print("│" + Main.menu[i].getID() + " ");
-            System.out.print(Main.menu[i].getNavn() + " ");
+            System.out.print(Main.menu[i].getNavn() + " - ");
             System.out.println(Main.menu[i].getPris()+ "kr");
         }
-        System.out.println("└──────────────────────┘");
+        System.out.println("└────────────────────────┘");
     }
 }
