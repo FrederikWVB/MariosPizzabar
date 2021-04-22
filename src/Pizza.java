@@ -4,8 +4,6 @@ public class Pizza {
     int ID;
     int salg;
 
-    public Pizza (){};
-
     public Pizza(String navn, int pris, int ID, int salg) {
         this.navn = navn;
         this.pris = pris;
