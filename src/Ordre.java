@@ -38,7 +38,7 @@ public class Ordre {
                 currentOrder.pizzaOrdre.add(menu[choice]);  //Tilføj pizza til ordreliste, tilsvarende menukort ID
                 Main.menu[choice].salg++;                   //Inkrementer salgscounter til givne pizza (bruges i statistik)
                 currentOrder.samletPris = currentOrder.samletPris + currentOrder.pizzaOrdre.get(counter).pris; //Samlet pris for bestilling
-                System.out.println(menu[choice].getNavn()); //Printer navn for bestilt pizza
+                System.out.println(menu[choice].getNavn() + " Tilføjet"); //Printer navn for bestilt pizza
                 counter++;                                  //counter for at holde styr på # bestilt pizza i den givne ordre
             }
         }
