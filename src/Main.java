@@ -23,6 +23,10 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);            //Scanner for userinput i switch case
 
+        System.out.println("Gruppe-5 Software inc. (Copyright © 1982)");
+        System.out.println("╔═══════════════════════════════════╗");
+        System.out.println("║       Mario's Pizzaria v1.0       ║");
+        System.out.println("╚═══════════════════════════════════╝");
 
         boolean UserExit = false;
 
@@ -69,7 +73,6 @@ public class Main {
         System.out.println("│»Tryk 4 for at slette ordre        │");
         System.out.println("│»Tryk 5 for at slukke systemet     │");
         System.out.println("└───────────────────────────────────┘");
-
     }
 }
 
