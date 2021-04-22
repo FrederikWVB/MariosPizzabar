@@ -23,16 +23,16 @@ public class Ordre {
     public static Ordre createOrdre(Pizza menu[]) {
         Ordre currentOrder = new Ordre();           //Laver et nyt Ordre element
         Scanner sc = new Scanner(System.in);
-        System.out.println("Indtast kundenavn:");
+        System.out.println("»Indtast kundenavn:");
         currentOrder.setKundenavn(sc.nextLine());   //Sætter kundenavn = input
 
         int choice = 1;
         int counter = 0;
 
-        System.out.println("Tast 0 når alle pizzer er på bestillingsliste");
+        System.out.println("Tast 0 for at afslutte bestilling");
 
         while (choice != 0) {                        //Mens choice != 0, tilføj flere pizzaer
-            System.out.print("Pizza ID: ");
+            System.out.print("»Pizza ID: ");
             choice = sc.nextInt();
             if (choice != 0) {
                 currentOrder.pizzaOrdre.add(menu[choice]);  //Tilføj pizza til ordreliste, tilsvarende menukort ID
@@ -48,23 +48,28 @@ public class Ordre {
     }
 
     public static void showOrdre(ArrayList<Ordre> ordreListInput) {
-        for (int i = 0; i < ordreListInput.size(); i++) {        //Loop gennemgår alle bestillinger i ordreList
+        System.out.println("┌─────Aktive Ordre─────┐");
 
-            System.out.println("Kunde: " + ordreListInput.get(i).kundenavn);
-            System.out.println("Tid: " + ordreListInput.get(i).bestillingstidspunkt);
+        for (int i = 0; i < ordreListInput.size(); i++) {        //Loop gennemgår alle bestillinger i ordreList
+            System.out.println("│Kunde: " + ordreListInput.get(i).kundenavn);
+            System.out.println("│Tid  : " + ordreListInput.get(i).bestillingstidspunkt);
 
             for (int j = 0; j < (ordreListInput.get(i).pizzaOrdre.size()); j++) {   //Loop printer alle bestilte pizzaer i given ordre
-                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getID() + " ");
+                System.out.print("│" + ordreListInput.get(i).pizzaOrdre.get(j).getID() + " ");
                 System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getNavn() + " ");
                 System.out.println(ordreListInput.get(i).pizzaOrdre.get(j).getPris() + "kr");
             }
 
-            System.out.println("Samlet pris: " + ordreListInput.get(i).samletPris);
-            System.out.println("ID: " + ordreListInput.get(i).bestillingsID);
+            System.out.println("│Samlet pris   : " + ordreListInput.get(i).samletPris + "kr");
+            System.out.println("│Bestillings ID: " + ordreListInput.get(i).bestillingsID);
+            System.out.println("├──────────────────────┤");
+
+
         }
     }
 
     public static void sletOrdre(ArrayList<Ordre> ordreListInput) {
+        System.out.println("»Indtast bestillings ID på den ordre du vil slette");
         Scanner sc = new Scanner(System.in);
         int checkID = sc.nextInt();                                 //Tager input for ID for element der skal slettes
         for (int i = 0; i < ordreListInput.size(); i++) {

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Iterator;
 
     /* Når programmet vises, skal det være muligt at vælge om man blot vil se menuen eller vil gå igang med at lave ordreliste.
 
@@ -34,7 +33,7 @@ public class Main {
             switch (sc.nextInt()){
 
                 case 1: //Opret ordre
-                    System.out.println(Menukort.menuForUser(menu));
+                    Menukort.menuForUser();
                     ordreListe.add(Ordre.createOrdre(Main.menu));
                     break;
 
@@ -48,7 +47,6 @@ public class Main {
 
                 case 4: //Slet ordre
                     Ordre.showOrdre(ordreListe);
-                    System.out.println("Indtast ID på den ordre du vil fjerne");
                     Ordre.sletOrdre(ordreListe);
                     break;
 
@@ -64,11 +62,14 @@ public class Main {
     }
 
     public static void choice (){
-        System.out.println("tryk 1 for at starte bestilling");
-        System.out.println("tryk 2 for at vise nuværende ordre");
-        System.out.println("tryk 3 for at vise salgsstatistik");
-        System.out.println("tryk 4 for at slette ordre");
-        System.out.println("tryk 5 for at slukke systemet");
+        System.out.println("┌─────────────Hovedmenu─────────────┐");
+        System.out.println("│»Tryk 1 for at starte bestilling   │");
+        System.out.println("│»Tryk 2 for at vise aktive ordre   │");
+        System.out.println("│»Tryk 3 for at vise salgsstatistik │");
+        System.out.println("│»Tryk 4 for at slette ordre        │");
+        System.out.println("│»Tryk 5 for at slukke systemet     │");
+        System.out.println("└───────────────────────────────────┘");
+
     }
 }
 
