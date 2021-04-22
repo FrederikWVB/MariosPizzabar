@@ -1,3 +1,6 @@
+///Gruppe 5 - Dat21V2
+///Andrea, Frederik, Iqra, Isabel, Jens Christian
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,14 +22,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("Gruppe-5 Software inc. (Copyright © 1982)");
+        System.out.println("╔═══════════════════════════════════╗");
+        System.out.println("║    Mario's Pizza-Terminal v1.0    ║");
+        System.out.println("╚═══════════════════════════════════╝");
+
         ArrayList<Ordre> ordreListe = new ArrayList<>();//Opretter ordreliste for pizzabestillinger
 
         Scanner sc = new Scanner(System.in);            //Scanner for userinput i switch case
-
-        System.out.println("Gruppe-5 Software inc. (Copyright © 1982)");
-        System.out.println("╔═══════════════════════════════════╗");
-        System.out.println("║       Mario's Pizzaria v1.0       ║");
-        System.out.println("╚═══════════════════════════════════╝");
 
         boolean UserExit = false;
 
@@ -75,4 +78,3 @@ public class Main {
         System.out.println("└───────────────────────────────────┘");
     }
 }
-
