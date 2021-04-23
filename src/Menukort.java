@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Menukort {
 
     public static Pizza[] createMenu() {
@@ -22,9 +24,20 @@ public class Menukort {
         System.out.println("┌────────Menukort────────┐");
         for (int i = 1; i < Main.menu.length; i++){
             System.out.print("│" + Main.menu[i].getID() + " ");
-            System.out.print(Main.menu[i].getNavn() + " - ");
-            System.out.println(Main.menu[i].getPris()+ "kr");
+            System.out.print(Main.menu[i].getNavn());
+            System.out.print(whiteSpace(15 - Main.menu[i].getNavn().length())  + " - ");
+            System.out.println(Main.menu[i].getPris()+ "kr│");
+
         }
         System.out.println("└────────────────────────┘");
+    }
+
+    public static String whiteSpace (int spaces) {
+        if (spaces > 0) {
+            char[] array = new char[spaces];
+            Arrays.fill(array, ' ');
+            return new String(array);
+        }
+        return "";
     }
 }

@@ -56,7 +56,8 @@ public class Ordre {
 
             for (int j = 0; j < (ordreListInput.get(i).pizzaOrdre.size()); j++) {   //Loop printer alle bestilte pizzaer i given ordre
                 System.out.print("│" + ordreListInput.get(i).pizzaOrdre.get(j).getID() + " ");
-                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getNavn() + " ");
+                System.out.print(ordreListInput.get(i).pizzaOrdre.get(j).getNavn());
+                System.out.print(Menukort.whiteSpace(12 - ordreListInput.get(i).pizzaOrdre.get(j).getNavn().length()) + ": ");
                 System.out.println(ordreListInput.get(i).pizzaOrdre.get(j).getPris() + "kr");
             }
 
