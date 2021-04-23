@@ -4,8 +4,6 @@ public class Pizza {
     int ID;
     int salg;
 
-    public Pizza (){};
-
     public Pizza(String navn, int pris, int ID, int salg) {
         this.navn = navn;
         this.pris = pris;
@@ -30,19 +28,4 @@ public class Pizza {
         return salg;
     }
 
-    public void setNavn(String navn) {
-        this.navn = navn;
-    }
-
-    public void setPris(int pris) {
-        this.pris = pris;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public int setSalg(){
-        return salg;
-    }
 }
